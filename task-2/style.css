@@ -1,0 +1,114 @@
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css';
+
+*{
+	margin:0;
+	padding:0;
+}
+
+.sec-top{
+        text-align:center;
+		background-color:rgb(244 252 250);
+}
+.sec-top h1{   
+    display:inline-block;
+    position: relative;
+	padding-bottom:50px;
+	font-size:35px;
+}
+
+.sec-top h1:before {
+  content : "";
+  position: absolute;
+  left: 25%;
+  bottom  : 25px;
+  width   : 50%; 
+  border-bottom:5px solid rgb(30 177 165);
+  border-radius:15px;
+}
+
+h5{
+     display:inline-block;
+	 width:370px;
+	 color:gray;
+	 font-size:15px;
+}
+
+.sec-top .container-1{
+	justify-content:center;
+	display:flex;
+    margin:30px 40px; 
+}
+
+.sec-top .container-1 i{
+	background-color:white;
+	color:rgb(30 177 165);
+	border-radius:50%;
+	font-size:40px;
+	padding:20px;
+}
+
+.sec-top .container-1 h3{
+	color:black;
+}
+.cards{
+	width:20%;
+	padding:25px;
+	color:rgb(133 146 142);
+}
+
+.sec-bottom { 
+    text-align:center;
+    background-color:rgb(235 235 235);
+	margin-top:20px;
+}
+
+.sec-bottom h1{   
+    text-align:center;
+	margin-bottom:10px;
+	font-size:45px;
+	font-weight:900;
+}
+
+.sec-bottom .container-2{
+	display:flex;
+	justify-content:center;
+	flex-wrap: wrap;
+	gap:10px;
+	
+	padding:0px 50px 20px 50px;
+}
+
+.sec-bottom .container-2 i{
+	font-size:40px;
+	color:rgb(30 178 166);
+	margin-bottom:20px;
+}
+
+.sec-bottom .container-2 h3{
+	font-size:20px;
+	margin-bottom:20px;
+}
+
+.sec-bottom .cards-bottom{
+	background-color:white;
+	/*width:12%;*/
+	height:150px;
+	padding:50px 10px;
+	flex: 0 0 14%; 
+}
+
+.sec-bottom .cards-bottom span{
+	display:inline-block;
+	background-color:hsl(0deg 0% 97.25%);
+	margin:20px;
+	padding:5px;
+	border-radius:5px;
+	
+}
+
+
+.cards-bottom:hover , .cards-bottom:hover i {
+	color:#fff!important;
+	background-color:rgb(30 178 166);
+}
+
