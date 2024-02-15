@@ -15,7 +15,7 @@ html{
    display:flex;
    justify-content:center;
    flex-wrap:wrap;
-   width:85%;
+   width:90%;
    padding:20px;
    margin:auto;
 }
@@ -25,7 +25,7 @@ html{
   border: 1px solid #ccc;
   border-radius: 5px;
  
-  width:50%;
+  width:500px;
   min-height:200px;
   overflow:hidden;
   max-width:600px;
@@ -39,9 +39,9 @@ html{
 .content{
 	display: flex;
     flex-direction: column;
-	padding:20px;
+	padding:10px;
 	 flex: 1;
-	 gap:15px;
+	 gap:30px;
 }
 
 a{  
@@ -55,11 +55,15 @@ a{
 	max-width:100px;
 }
 
+h2{
+	
+}
+
 span{
-	font-size:28px;
+	font-size:100%;
 	font-weight:bold;
 	color:#c8a97e;
-	margin:30px 8px;
+    margin:10px;
 }
 
 .section-second{
