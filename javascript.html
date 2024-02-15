@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<body>
+
+    <script>
+//1) AD soyad ata adinizi butov sheklde goturun ve array sheklinde herflerine ayirin
+const fullname = 'Murad Nərimanlı Tərlan';	
+let arrfamily = [];
+const newarray = fullname.split('');
+arrfamily.push(newarray);
+console.log("ad ve soyad to array - "+arrfamily);
+////////111111111
+
+//2) Herflere ayrilmish arrayda soyadinizi adinizin onune keciren alqoritm yazin
+
+    const simv = fullname.split('');
+    const probell = simv.indexOf(' ');
+
+    const name_ad = simv.slice(0, probell);
+    const surname = simv.slice(probell + 1);
+    
+    const new_name = surname.concat([' ']).concat(name_ad);
+    const nname = name_ad.concat().join('');
+	const nsurname = surname.concat().join('');
+
+//const change_name = surname(fullname);
+
+console.log(nsurname+' '+nname);
+/////22222222222222
+
+//3) Alinan yeni arrayi stringe cevirin ama ilk array deyishmesin
+const nyarray = fullname.slice(1, fullname.lenght);
+const stringo = nyarray.toString();
+console.log(stringo);
+////3333333333
+
+//4) Yuxaridaki arrayda 5 reqeminin nece defe tekrarlandigini tapin
+let arr = [5,2,1,5,77,2,5,3,5,6,2,7,6,2,6,2,5,3,2,7,4,6,4,5,4,2,5,6,3,7,3,7,51]
+let count = 0;
+
+for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === 5) {
+        count++;
+    }
+}
+
+console.log(count+' defe tekrarlanir');
+
+////////4444444444
+
+//5) Yuxaridaki arraydaki butun reqemlerin cemini tapin
+let sum = 0;
+
+for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+}
+console.log('arraydaki butun ededlerinin cemi '+sum);
+///////////555555555
+
+//6) arrayda tekrar olunan reqemleri artan sira ile duzun
+const tekrarlanan = [];
+
+for (let i = 0; i < arr.length; i++) {
+  for (let j = i + 1; j < arr.length; j++) {
+    if (arr[i] === arr[j] && !tekrarlanan.includes(arr[i])) {
+      tekrarlanan.push(arr[i]);
+    }
+  }
+}
+tekrarlanan.sort(function(b, a){return a-b});
+console.log('tekrarlanan reqemler artan sira ile : '+tekrarlanan);
+////////666666666
+
+//7) arraydaki en boyuk reqemi tapin ve nece defe tekrarlandigini gosterin
+ let max = arr[0]; 
+ let counto = 0;
+for (let i = 0; i < arr.length; i++) {
+     if (arr[i] > max) 
+            max = arr[i]; 
+}
+
+for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === max) {
+        counto++;
+    }
+}
+console.log("En boyuk eded "+max +" ve "+counto+" defe tekrarlanir");
+////////////777777777
+
+//8) Random 1 den 10 a qeder reqem generate edin ve sonra arrayda hemin reqemin olub olmamasini yoxlayin
+const randomize = Math.floor(Math.random() * 10);
+let randomvar;
+for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === randomize) {
+	
+     randomvar='random olunmus reqem arrayda var';
+	 break;
+    }else {
+	randomvar='random olunmus reqem arrayda yoxdur';
+	};
+    }
+	console.log(randomvar);
+///////////88888888888	
+
+//9) Adinizdaki herflerin sayini tapin ve hemin sayin arrayda olub olmamasini yoxlayin Meselen Murad adinda 5 herf var ve 5 arrayda var
+let text = "Agalar";
+let myname = text.length;
+let name = 'yoxdur';
+
+for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === myname) {
+        name = 'adinizda herflerin sayi qeder reqem arrayda var';
+        break;
+    }
+}
+console.log(name);
+//////////9999999999999999
+
+//10) arraydaki ilk 3 e bolunende qaliqda 2 alinan reqemi ve hemin reqemin arraydaki indexini tapin
+
+///Question dont understanding !
+
+/////////1000000000000
+
+//11) arraydaki en boyuk reqemin ilk indexini tapin
+let allbignumber='hhh';
+for (let i = 0; i < arr.length; i++) {
+     if (arr[i] === max) {
+	 allbignumber=arr[i];
+           break; 
+}		   
+}
+console.log('arraydaki en boyuk ededin indeksi :',arr.indexOf(allbignumber)+1);
+
+//////////111111111111
+
+//12) 4 reqeminin arrayin hansi indexlerinde oldugunu gosterin
+let four=[];
+for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === 4) {
+	 four.push(i+1);
+       //console.log(i);
+    }
+}
+console.log('4 reqemi indeksleri '+four+' dir');
+////////////121212121212
+
+//13) 5 reqeminin arraydaki en boyuk ve en kicik indexlerini tapin
+let five=[];
+for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === 5) {
+	 five.push(i+1);
+       //console.log(i);
+    }
+}
+let maxs = arr[0];
+let mins = arr[0];
+
+for (let i = 1; i < five.length; i++) {
+    if (five[i] > maxs) {
+        maxs = five[i];
+    }
+    if (five[i] < mins) {
+        mins = five[i];
+    }
+}
+console.log('maksimum '+maxs+' minimum '+mins);
+console.log(five);
+///////////1313131313
+
+//14) "arr" - arrayindan reqemleri 2 den boyuk olan yeni array yaradin ve alinmish arrayla "arr" arrayinin uzunluqlari ferqini hesablayin
+const arrayk=[];
+
+for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 2) {
+	arrayk.push(new Array(arr[i]));
+      
+    }
+	
+}
+const diferenc=Math.abs(arr.length - arrayk.length);
+
+console.log("Aralarindaki ferq : "+diferenc);
+
+//////1414141414141414
+
+//15) 7 reqeminin indexleri cemini tapin.
+let seven=[];
+let summa = 0;
+for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === 7) {
+	 seven.push(i+1);
+       //console.log(i);
+    }
+}
+for (let i = 0; i < seven.length; i++) {
+   summa += seven[i];
+}
+console.log('7 reqeminin indekslerinin cemi : '+summa);
+////////15151515151515151515
+
+// 16 arr2 de "name"-i "t" herfi ile bashlayan obyektleri yeni arraya yigin
+let find_t=[];
+let arr2 = [
+  {
+    name:'atl',
+    key:1
+  },
+  {
+    name:'task',
+    key:2
+  },
+  {
+    name:'utanuqouqulikko',
+    key:3
+  },
+  {
+    name:'likeaaxaxawwwwwwwwwwwww',
+    key:4
+  },
+  {
+    name:'taskuu',
+    key:5
+  },
+  {
+    name:'trust',
+    key:6
+  },
+  {
+    name:'test',
+    key:7
+  },
+  {
+    name:'last',
+    key:8
+  },
+  {
+    name:'tainqoiaa',
+    key:9
+  },
+  {
+    name:'aele',
+    key:10
+  },
+  {
+    name:'lllove',
+    key:11
+  },
+  {
+    name:'smal',
+    key:12
+  },
+  {
+    name:'ll',
+    key:13
+  },
+]
+
+const startsWithT = arr2.filter(item => item.name.startsWith('t'));
+startsWithT.forEach(item => {
+    find_t.push(item);
+});
+find_t.forEach(item => {
+    console.log("Yeni array name-i 't' ile baslayanlar: "+item.name);
+});
+
+//////////16161616161616161616
+
+///////// 17 arr2 de "name"-i "t" herfi ile bashlayib "t" herfi ile biten obyektlerin sayini tapin
+const startsendst = arr2.filter(item => item.name.startsWith('t') && item.name.endsWith('t'));
+
+const yeniarray = [];
+
+startsendst.forEach(item => {
+    yeniarray.push(item);
+	
+});
+console.log("name-i 't' ile baslayib ve 't' ile bitenlerin sayi: "+yeniarray.length);
+//////171717171717171717
+
+// 18 arr2 de "name"-i "t" herfi ile bashlayib "t" herfi ile biten obyektlerin "key"- lerinin cemini tapin
+let summar=0;
+yeniarray.forEach(item => {
+    summar+=item.key;
+});
+
+console.log(summar);
+////////1818181818
+
+////// 19 arr2 de "name"-i "e" herfi ile biten obyeklerdeki name-in deyerini "SuperDev" sozu ile evezleyin.
+const endwith_e = arr2.filter(item => item.name.endsWith('e'));
+endwith_e.forEach(item => {
+    item.name="SuperDev";
+});
+
+console.log("Sonu 'e' herfi ile biten name-nin deyeri SuperDev ile evezlendi ",endwith_e);
+/////////191919191919
+
+
+/////// 20 arr2 de "name"-i en uzun olan obyektin key-i ni tapin
+let longestName = '';
+let key = '';
+arr2.forEach(item => {
+    if (item.name.length > longestName.length) {
+	longestName = item.name;
+        key = item.key;
+    }
+});
+
+console.log("En uzun name keyi -i", key);
+////////202020202020
+
+///// 21 arr2 de "name"-i en uzun olan obyektin indexin kvadratini hesablayin
+const index = arr2.findIndex(object => {
+  return object.name === longestName;
+});
+console.log('en uzun name-i olan array-in indeksin kvadrati : '+index*index);
+////212121212121212121212121
+
+// 22 arr2 de "name"-inin uzunlugu 4 olan obyektlerden ibaret yeni array yaradin.
+const objection = [];
+arr2.forEach(item => {
+    if (item.name.length ===4) {
+        objection.push(item);
+    }
+	
+});
+console.log("name-nin uzunlugu 4 olan objektlerden ibaret yeni array: ",objection);
+///////////////222222222222222222222222
+
+/////// 23 arr2 de en boyuk "key" - i olan obyektin "name"-i ni tapin
+let minecraft=0;
+arr2.forEach(item => {
+    if (item.key > 0) {
+        minecraft = item.name;
+    }
+});
+console.log('arr2 de en boyuk "key" - i olan obyektin "name"-i : ',minecraft);
+////////////2323232323232323232323232323
+
+////// 24 arr2 de terkibinde 2 'L' herfi olan obyekt(ler)in index(ler)ini tapin.
+
+const qulam = [];
+const qulu =[];
+const birlesdir=[];
+arr2.forEach(item => {
+    qulam.push(item.name.split(""));
+});
+
+for (let i = 0; i < qulam.length; i++) {
+    const lCount = qulam[i].filter(letter => letter === 'a').length;
+    if (lCount > 2) {
+	
+        qulu.push(qulam[i]);
+    }
+}
+
+let textos = qulu.toString();
+
+const regExp = /,\*\,|%|#|&|\$/g;
+
+console.log(textos.replace(regExp, ''));
+/// 24 arr2 de terkibinde 2 'L' herfi olan obyekt(ler)in index(ler)ini tapin.
+const indexes = arr2
+  .filter(item => (item.name.match(/l/g) || []).length >= 1)
+  .map(item => arr2.indexOf(item));
+
+console.log("arr2 de terkibinde 2 'L' herfi olan obyekt(ler)in index(ler)i:", indexes);
+
+
+////////////////////////2424242424242424242424242
+
+///// 25 arr2 de terkibinde 2 't' herfi olan obyekt(ler)in key(ler)ini tapin.
+const indexesAndKeys = arr2
+  .filter(item => (item.name.match(/t/g) || []).length >= 2)
+  .map(item => ({ index: arr2.indexOf(item), key: item.key }));
+
+console.log("Indexes and keys of objects with two or more 'a' characters in name:", indexesAndKeys);
+///////////2525252525252525
+	</script>
+</body>
+</html>
